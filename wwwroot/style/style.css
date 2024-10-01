@@ -1,1 +1,11 @@
- 
+ .grump-card-display {
+    display: flex;
+    flex-wrap: wrap;
+ }
+
+ .grump-card {
+    width: 30%;
+    border: 1px solid black;
+    padding: 12px;
+    margin: 12px;
+ }
