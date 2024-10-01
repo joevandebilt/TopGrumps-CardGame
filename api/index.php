@@ -1,8 +1,12 @@
  <?php
 
-$payload = [];
-$payload["Hello"] = "World";
+header('Content-Type: application/json; charset=utf-8');
+require_once($_SERVER['DOCUMENT_ROOT']."/api/Classes/Class.Main.php");
 
-echo json_encode($payload);
+
+$DICard = new DICard();
+$response = $DICard->GetAllCards();
+
+echo json_encode($response);
 
  ?>
