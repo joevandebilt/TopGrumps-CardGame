@@ -1,42 +1,64 @@
-<div class="grump-card">
+<div class="grump-card textured">
     <div class="grump-card-header">
-        <div class="grump-banner">Top Grumps</div>
-        <div class="grump-hp" data-id="hp"></div>
+        <div class="grump-header-overlay overlay">
+            <div class="top-left"></div>
+            <div class="top-right"></div>
+            <div class="bottom-left"></div>
+            <div class="bottom-right"></div>
+        </div>
+        <h4 class="grump-banner">Top Grumps</h4>
+        <div class="grump-hp h5 text-end">
+            <label>HP</label>
+            <div data-id="hp">0</div>
+        </div>
         <div class="grump-image"><img src="" alt="Card Name" data-id="image"></div>
-        <div class="grump-name" data-id="name">Card Name</div>
+        <h5 class="grump-name" data-id="name">Card Name</h5>
     </div>
     <div class="grump-card-body">
-        <div class="grump-strength">
-            <label>Strength</label>
-            <div data-id="strength">0</div>
+        <div class="grump-body-overlay overlay">
+            <div class="bottom-left"></div>
+            <div class="bottom-right"></div>
         </div>
-        <div class="grump-stamina">
-            <label>Stamina</label>
-            <div data-id="stamina">0</div>
+        <div class="grump-stats row">
+            <div class="col-6">
+                <div class="grump-stat">
+                    <label>Strength</label>
+                    <div data-id="strength">0</div>
+                </div>
+                <div class="grump-stat">
+                    <label>Stamina</label>
+                    <div data-id="stamina">0</div>
+                </div>
+                <div class="grump-stat">
+                    <label>Reliability</label>
+                    <div data-id="reliability">0</div>
+                </div>
+                <div class="grump-stat">
+                    <label>Intelligence</label>
+                    <div data-id="intelligence">0</div>
+                </div>
+                <div class="grump-stat">
+                    <label>Intimidation</label>
+                    <div data-id="intimidation">0</div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="grump-meta">
+                    <label>Strengths</label>
+                    <div class="text-wrap" data-id="strengths">hard as fuck</div>
+                </div>
+                <div class="grump-meta">
+                    <label>Weaknesses</label>
+                    <div class="text-wrap" data-id="weaknesses">soft as shit</div>
+                </div>
+            </div>
         </div>
-        <div class="grump-reliability">
-            <label>Reliability</label>
-            <div data-id="reliability">0</div>
-        </div>
-        <div class="grump-intelligence">
-            <label>Intelligence</label>
-            <div data-id="intelligence">0</div>
-        </div>
-        <div class="grump-intimidation">
-            <label>Intimidation</label>
-            <div data-id="intimidation">0</div>
-        </div>
-        <div class="grump-strengths">
-            <label>Strengths</label>
-            <div data-id="strengths">hard as fuck</div>
-        </div>
-        <div class="grump-weaknesses">
-            <label>Weaknesses</label>
-            <div data-id="weaknesses">soft as shit</div>
-        </div>
-        <div class="grump-finisher">
-            <label>Finishing Move</label>
-            <div data-id="finishingmove">Finished!</div>
-        </div>
+    </div>
+    <div class="grump-finisher">
+        <h6>Finishing Move</h6>
+        <div data-id="finishingmove">Finished!</div>
+    </div>
+    <div class="grump-card-footer">
+        <a href="#" target="_blank" data-id="episodeurl" class="nav-link small">Watch Episode</a>
     </div>
 </div>

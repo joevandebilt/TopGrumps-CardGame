@@ -24,13 +24,19 @@ var cardTemplate;
 
       let properties = Object.getOwnPropertyNames(card);
       properties.forEach(property => {
-         propValue = card[property];
+         propValue = card[property].split("\n").join("<br />");
+         if (!isNaN(propValue)) {
+            propValue = parseFloat(propValue)*1;
+         }
          propKey = property.toLowerCase();
          $input = $card.find("[data-id='"+propKey+"']")
          if ($input.length === 1) {
             if (propKey == "image") {
                $input.attr("src", imageDirectory+propValue);
                $input.attr("alt", "Picture of " + card.Name);
+            }
+            else if (propKey == "episodeurl") {
+              $input.attr("href", propValue);
             }
             else {
                $input.html(propValue);

@@ -1,11 +1,226 @@
+ :root{
+   --card-triangle-size: 90px;
+ }
+
+ .textured {
+  background:
+    linear-gradient(27deg, #151515 5px, transparent 5px) 0 5px,
+    linear-gradient(207deg, #151515 5px, transparent 5px) 10px 0px,
+    linear-gradient(27deg, #222 5px, transparent 5px) 0px 10px,
+    linear-gradient(207deg, #222 5px, transparent 5px) 10px 5px,
+    linear-gradient(90deg, #1b1b1b 10px, transparent 10px),
+    linear-gradient(#1d1d1d 25%, #1a1a1a 25%, #1a1a1a 50%, transparent 50%, transparent 75%, #242424 75%, #242424);
+  background-color: #131313;
+  background-size: 20px 20px;
+ }
+ 
  .grump-card-display {
     display: flex;
+    justify-content: space-around;
     flex-wrap: wrap;
+
+    align-self: baseline;
  }
 
  .grump-card {
-    width: 30%;
-    border: 1px solid black;
-    padding: 12px;
+    position: relative;
+    width: 23%;
+    border: 15px solid #e4be07;
     margin: 12px;
+
+   color: #e4be07;
+   background-color: #0a0806;
  }
+
+ .grump-card-header {
+   position: relative;
+   min-height: 30%;
+   text-align: center;
+
+   z-index: 1;
+ }
+
+.overlay {
+  z-index: 2;
+  height: 100%;
+  width: 100%;
+
+  position: absolute;
+}
+
+ .grump-header-overlay {
+   border-color: #0a0806;
+   border-style: solid;
+   border: 0 12px 0 12px;
+ }
+
+ .grump-body-overlay {
+  bottom: 6.25%;
+ }
+
+ .grump-header-overlay div,
+ .grump-body-overlay div {
+   display: inline-block;
+   position: absolute;
+
+   width: 0px;
+   height: 0px;
+
+   border-style: solid;
+   transform: rotate(0deg);
+ }
+
+ .top-left {
+   top: 0;
+   left: 0;  
+
+   border-width: var(--card-triangle-size) var(--card-triangle-size) 0 0;
+   border-color: #0a0806 transparent transparent transparent;
+ }
+
+ .top-right {
+   top: 0;
+   right: 0;
+
+   border-width: 0 var(--card-triangle-size) var(--card-triangle-size) 0;
+   border-color: transparent #0a0806 transparent transparent;
+ }
+
+ .bottom-left {
+   bottom: 0;
+   left: 0;  
+
+   border-width: var(--card-triangle-size) 0 0 var(--card-triangle-size);
+   border-color: transparent transparent transparent #0a0806;
+ }
+
+ .bottom-right {
+   bottom: 0;
+   right: 0;
+
+   border-width: 0 0 var(--card-triangle-size) var(--card-triangle-size);
+   border-color: transparent transparent #0a0806  transparent;
+ }
+
+
+ .grump-banner {
+   width: 100%;
+   padding: 12px 0 12px 0;
+   font-weight: 900;
+ }
+ 
+ .grump-hp {
+   z-index: 3;
+   position: absolute;
+   right: 6px;
+   top: 3px;
+   text-align: left;
+ }
+
+ .grump-image {
+   width: 100%;
+ }
+
+ .grump-image img {
+   width: 100%;
+   height: 280px;
+   object-fit: cover;
+ }
+
+ .grump-name {
+   width: 100%;
+   padding: 6px 0 6px 0;
+   margin-bottom: 0;
+ }
+
+  .grump-card-body {
+    min-height: 47%;
+    border-top: 4px solid #e4be07;
+    position: relative;
+    
+    margin-bottom: 85px;
+  }
+
+ .grump-stats {
+    padding: 12px 15px 0px 15px;
+ }
+
+ .grump-stat {
+   width: 100%;
+   white-space: nowrap;
+   overflow: hidden;
+
+   margin-bottom: 16px;
+   align-self: center;
+   display: flex;
+   justify-content: space-between;
+ }
+
+ .grump-stats label {
+   font-weight: 700;
+   display: inline-block;
+   padding-right: 24px;
+ }
+
+ .grump-stat div {
+   display: inline-block;
+   right: 0px;
+ }
+
+ .grump-meta {
+  margin-bottom: 12px;
+ }
+
+ .grump-meta label,
+ .grump-meta div {
+   display: block;
+   width: 100%;
+   min-width: 100%;
+ }
+
+ .grump-finisher {
+    display: block;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+
+    border-top: #e4be07 6px solid;
+    
+    bottom: 30px;
+ }
+
+ .grump-finisher label {
+   width: 50%;
+   display: inline;
+   text-align: right;
+ }
+
+ .grump-finisher div {
+   width: 50%;
+   display: inline;
+   text-align: left;
+ }
+
+ .grump-card-footer {
+    z-index: 5;
+    
+    min-height: 3%;
+    display: block;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    bottom: 0px;
+
+    background-color: #0a0806;
+ }
+
+ .grump-card-footer a {
+   color: #e4be07;
+ }
+
+
+ @media (max-width:641px) {
+  .grump-card {
+    width: 100%;
+ }
+}
