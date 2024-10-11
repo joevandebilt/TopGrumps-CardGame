@@ -161,11 +161,13 @@
  .grump-stats label {
    font-weight: 700;
    display: inline-block;
+   padding-left: 6px;
    padding-right: 24px;
  }
 
  .grump-stat div {
    display: inline-block;
+   padding-right: 6px;
    right: 0px;
  }
 
@@ -225,4 +227,30 @@
   .grump-card {
     width: 100%;
  }
+}
+
+.glow-perm,
+.glow:hover {
+  box-shadow: 0 0 10px 5px #e4be07,
+              0 0 20px 7px #e4be07,
+              0 0 25px 20px #e4be07,
+              0 0 25px 20px #e4be07;
+}
+.glow-text-perm,
+.glow-text:hover {
+  text-shadow: 0 0 5px ,
+                0 0 10px #e4be07,
+                0 0 20px #e4be07,
+                0 0 30px #e4be07,
+                0 0 40px #e4be07,
+                0 0 55px #e4be07,
+                0 0 70px #e4be07;
+}
+
+.hidden { 
+  display: none;
+}
+
+#panel-outcome {
+  color: #e4be07;
 }

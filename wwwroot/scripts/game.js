@@ -1,6 +1,6 @@
 var GameHandler = (function ($) {
 
-    var properties = ["Strength", "Stamina", "Reliability", "Intelligence", "Intimidation", "HP"];
+    var properties = ["Strength", "Stamina", "Reliability", "Intelligence", "Intimidation"];
     var currentGame = null;
 
     function startGame() {
@@ -17,26 +17,39 @@ var GameHandler = (function ($) {
         var MyMove = currentGame.MyMoves[0];
         var CompMove = currentGame.ComputerMoves[0];
 
-        console.log("You chose to use " + MyMove.Card.Name + "'s " + MyMove.Property);
-        console.log("Your opponent chose to use " + CompMove.Card.Name + "'s " + CompMove.Property);
-
         var myParam = parseFloat(getMove(MyMove.Card, MyMove.Property));
         var compParam = parseFloat(getMove(CompMove.Card, CompMove.Property));
 
+        CardHandler.RenderCards([CompMove.Card]);
+
+        $("[data-id='"+MyMove.Card.ID+"']").find("[data-property='"+MyMove.Property.toLowerCase()+"']").closest(".grump-stat").addClass("glow-text-perm");
+        $("[data-id='"+CompMove.Card.ID+"']").find("[data-property='"+CompMove.Property.toLowerCase()+"']").closest(".grump-stat").addClass("glow-text-perm");
+
+        console.log("You chose to use " + MyMove.Card.Name + "'s " + MyMove.Property);
+        console.log("Your opponent chose to use " + CompMove.Card.Name + "'s " + CompMove.Property);
         console.log(myParam + " > " + compParam);
         if (myParam > compParam) {
-            alert("You win");
+            $("#panel-outcome").html("You Win!");
+            //addRound(1, MyMove, CompMove);
         } else if (myParam == compParam) {
-            alert("It's a draw");
+            $("#panel-outcome").html("You Drew!");
+            //addRound(0, MyMove, CompMove);
         }
         else {
-            alert("you lost this one fam");
+            $("#panel-outcome").html("You Lost :(");
+            //addRound(-1, MyMove, CompMove);
         }
 
-        CardHandler.CreateCardGame();
+        $("#btnStartGame").addClass("hidden");
+        $("#btnResetGame").removeClass("hidden");
     }
 
     function setupGame(params) {
+        $("#panel-outcome").empty();
+        $("#btnResetGame").addClass("hidden");
+        $("#btnStartGame").removeClass("hidden");
+        $("#btnStartGame").prop("disabled", true);
+
         currentGame = {
             MyHand: params.MyHand,
             ComputerHand: params.ComputerHand,
@@ -64,6 +77,7 @@ var GameHandler = (function ($) {
         $("#my-cards").empty();
         $("#my-cards").append(card);
 
+        $(card).removeClass("glow");
         var id = $(card).attr("data-id");
         var card = currentGame.MyHand.filter((card) => card.ID == id)[0];
 
@@ -72,6 +86,9 @@ var GameHandler = (function ($) {
             $(stat).on('click', () => {
                 GameHandler.SetMove(card, property);
             });
+            $(stat).addClass("glow-text");
+            //$(stat).find("label").addClass("glow-text");
+            //$(stat).find("div").addClass("glow-text");
         });
     }
 

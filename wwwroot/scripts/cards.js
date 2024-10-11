@@ -1,5 +1,9 @@
 var CardHandler = (function ($) {
-    function renderCards(cards) {
+    function renderCards(cards, clear) {
+        if (clear === true) {
+            $("#my-cards").empty();
+        }
+
         cards.forEach(card => {
             $card = $(cardTemplate);
 
@@ -64,6 +68,9 @@ var CardHandler = (function ($) {
         },
         LoadCards: function (card) {
             return loadCards();
+        },
+        RenderCards: function(cards, clear) {
+            return renderCards(cards, clear);
         }
     }
 
