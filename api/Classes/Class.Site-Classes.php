@@ -4,6 +4,7 @@
     //This can either be loaded from the Main Class or loaded from a headless page, i.e an API
 
     //Include our custom site objects
+    require_once($_SERVER['DOCUMENT_ROOT'].'/api/Objects/Object.GameParameters.php');
     require_once($_SERVER['DOCUMENT_ROOT'].'/api/Objects/Object.Card.php');
     require_once($_SERVER['DOCUMENT_ROOT'].'/api/Objects/Object.Response.php');
 

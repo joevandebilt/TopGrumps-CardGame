@@ -143,6 +143,8 @@
 
  .grump-stats {
     padding: 12px 15px 0px 15px;
+    position: relative;
+    z-index: 3;
  }
 
  .grump-stat {
