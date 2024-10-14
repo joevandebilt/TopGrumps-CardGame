@@ -1,7 +1,7 @@
 # TopGrumps-CardGame
-The Top Grumps Cardgame where you can view the cards from the episodes and play a little 1v1 game against the computer. 
+The Top Grumps Cardgame where you can view the cards from the episodes and play a little 1v1 game against the computer. Currently hosted at [Joe's Dev Server](https://topgrumps.nkode.uk)
 
-##To-Do List
+## To-Do List
 - [ ] Animate Cards
 - [ ] Improve Design on Cards
 - [ ] Fix mobile views
@@ -11,9 +11,9 @@ The Top Grumps Cardgame where you can view the cards from the episodes and play 
 - [ ] Improve AI models (multiple possible models?) 
 - [ ] Add Strength/Weakness bonus'
 
-##Bugs
+## Bugs
 * Footer Links don't flush with bottom of page
 * Text highlight is very 'boxy'
 
-###Credits
+### Credits
 This project was based on the popular [Top-Grumps video series](https://www.youtube.com/playlist?list=PLZGK23V2wY4Ycb566A6yMReMcs_lqMBzW) from [Nerdy Up North](https://www.youtube.com/@NerdyUpNorth)
